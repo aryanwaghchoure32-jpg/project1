@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #f3efe4;
+  --card: #fffdf7;
+  --ink: #201d15;
+  --ink-soft: #57534a;
+  --muted: #8a857a;
+  --line: #e4dcc6;
+  --line-soft: #ede7d3;
+  --pine: #1c3d2e;
+  --pine-deep: #142c21;
+  --rust: #c05a2a;
+  --rust-soft: #f7e5d7;
+  --gold: #b98a1d;
+  --sage: #e7ecdf;
+  --blush: #f6e3d3;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: "Fraunces", Georgia, serif;
+  letter-spacing: -0.02em;
+}
+
+.font-mono2 {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+.paper-texture {
+  background-image: radial-gradient(rgba(32, 29, 21, 0.055) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.card-stitch {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  position: relative;
+}
+
+.card-stitch::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px dashed rgba(28, 61, 46, 0.18);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.label-caps {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.thread-line {
+  height: 1px;
+  background-image: linear-gradient(to right, #c9bfa4 55%, transparent 45%);
+  background-size: 10px 1px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::selection {
+  background: #1c3d2e;
+  color: #fffdf7;
+}
+
+/* soft ring animation */
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+.pulse-dot {
+  animation: pulse-soft 1.6s ease-in-out infinite;
+}
+
+dialog::backdrop {
+  background: rgba(24, 22, 15, 0.45);
+  backdrop-filter: blur(3px);
+}
